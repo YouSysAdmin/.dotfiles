@@ -1,0 +1,11 @@
+.*~
+*.*~
+*.swp
+*.log
+*.pem
+*.priv
+*.private
+.idea
+.fleet
+.vscode
+.DS_Store

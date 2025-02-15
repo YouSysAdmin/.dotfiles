@@ -1,0 +1,143 @@
+---
+# ---------------------------------------------------------------------------------------------
+# --  Initialize
+# ---------------------------------------------------------------------------------------------
+- defaults:
+    link:
+      relink: true
+      create: true
+    shell:
+      stderr: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+# ---------------------------------------------------------------------------------------------
+# --  Setup
+# ---------------------------------------------------------------------------------------------
+- shell:
+    - ["git submodule update --init --recursive",                             Installing/Updating submodules]
+    - ["mkdir -p $HOME/{.config,.cache,.local/{share,state,bin}}",            Creating XDG_* directories]
+    - ["mkdir -p $HOME/{tmp,Projects}",                                       Creating default directories]
+    - ["mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                   Creating ssh directory]
+    - ["mkdir -p $HOME/.ssl/{certs,private}; chmod 700 $HOME/.ssl",           Creating ssl directory]
+    #- ["test -L ~/src || ln -s ~/Repos ~/src",                                Symlink repos]
+
+# ---------------------------------------------------------------------------------------------
+# --  Link configs
+# ---------------------------------------------------------------------------------------------
+- link:
+    # zellij
+    ~/.config/zellij:
+      path: config/zellij/*
+      glob: true
+    # zellij plugins
+    ~/.local/share/zellij/plugins:
+      path: config/zellij/plugins/*
+      glob: true
+    # helix
+    ~/.config/helix:
+      path: config/helix/*
+      glob: true
+    # rbenv
+    ~/.rbenv:
+      path: vendor/rbenv/*
+      glob: true
+    # nodenv
+    ~/.nodenv:
+      path: vendor/nodenv/*
+      glob: true
+    # oh-my-zsh
+    ~/.oh-my-zsh:
+      path: vendor/oh-my-zsh/*
+      glob: true
+    # zsh and stuff
+    ~/.zsh_aliases: config/zsh/zsh_aliases
+    ~/.zsh_additional_functions: config/zsh/zsh_additional_functions
+    ~/.zshrc: config/zsh/zshrc
+    ~/.zshenv: config/zsh/zshenv
+    ~/.zsh_init: config/zsh/zsh_init
+    ~/.p10k.zsh: config/zsh/p10k.zsh
+    # git
+    ~/.gitcommit: config/git/gitcommit
+    ~/.gitconfig: config/git/gitconfig
+    ~/.gitignore: config/git/gitignore
+    # auto completion
+    ~/.auto_completion: config/auto_completion
+    # bin
+    #~/.local/bin/response-check: bin/response-check.sh
+
+# ---------------------------------------------------------------------------------------------
+# --  Install Software
+# ---------------------------------------------------------------------------------------------
+- defaults:
+    shell:
+      stdin: true
+      stdout: true
+      stderr: true
+
+# Install base system packages via package manager
+- shell:
+    -
+      description: install brew
+      command: "[[ $OSTYPE == 'darwin'* ]] && sh -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" || exit 0"
+    -
+      description: install additional tools via brew
+      command: "[[ -f ./Brewfile ]] && [[ $OSTYPE == 'darwin'* ]] && brew bundle || exit 0"
+    -
+      description: install linux packages
+      command: "[[ $OSTYPE != 'darwin'* ]] && apt update && apt install zsh wget curl unzip || exit 0"
+
+- shell:
+    -
+      description: install oh-my-zsh
+      command: bin/install-oh-my-zsh.sh
+    -
+      description: install rbenv
+      command: bin/install-rbenv.sh
+    -
+      description: install nodenv
+      command: bin/install-nodenv.sh
+    -
+     description: install goenv
+     command: bin/install-goenv.sh
+    -
+      description: install zellij
+      command: bin/install-zellij.sh
+    -
+      description: setup go-task
+      command: bin/install-go-task.sh
+    -
+      description: setup jc2aws
+      command: bin/install-jc2aws.sh
+    -
+      description: setup tfswitch
+      command: bin/install-tfswitch.sh
+    -
+      description: setup tfsec
+      command: bin/install-tfsec.sh
+    -
+      description: setup tflint
+      command: bin/install-tflint.sh
+    -
+      description: setup kubectl
+      command: bin/install-kubectl.sh
+    -
+      description: setup krew
+      command: bin/install-krew.sh
+    -
+      description: setup helix-editor
+      command: bin/install-helix.sh
+    -
+      description: setup lefthook
+      command: bin/install-lefthook.sh
+    -
+      description: setup kubectl plugins via kubectl-krew
+      command: |
+        source $HOME/.zshenv
+        kubectl krew install ctx
+        kubectl krew install ns
+      # kubectl krew install tap # uncomment if needed but only linux or intel mac

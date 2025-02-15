@@ -1,0 +1,41 @@
+# Useful keys
+alias wget='wget -c'
+alias mkdir='mkdir -pv'
+alias less='less -FX'
+
+# Short names
+alias lg="lazygit"
+alias tf="terraform"
+alias be="bundle exec"
+alias k='kubecolor'
+alias kc='kubectl-ctx'
+alias kn='kubectl-ns'
+alias kubectl="kubecolor"
+
+# GIT
+alias git-remove-merged-branch="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+
+# Python
+alias python="python3"
+alias mkvenv='python3 -m venv ./.venv && source ./.venv/bin/activate && pip install --upgrade pip'
+alias activate='source ./.venv/bin/activate'
+
+# Specific aliases for macos
+if [[ $OSTYPE == 'darwin'* ]]; then
+  alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+  alias brew='/opt/homebrew/bin/brew'
+fi
+
+# Set alias for the jc2aws
+if [ -f "$HOME/.local/bin/jc2aws" ]; then
+  alias generate-creds="jc2aws -i"
+fi
+
+# Set alias for the response-check.sh script
+alias response_check="~/.dotfiles/bin/response-check.sh"
+
+# Set alias for the tfswitch with params
+alias tfswitch="tfswitch -b ~/.local/bin/terraform"
+
+# Get public ip
+alias myip="curl ifconfig.me/ip"

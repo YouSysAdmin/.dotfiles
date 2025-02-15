@@ -1,0 +1,89 @@
+[core]
+    editor = vim
+    excludesFile = ~/.gitignore
+    autocrlf = input
+
+[color]
+    ui = true
+
+[user]
+    name = YouSysAdmin
+    email = git@sysalex.com
+    #signingKey = ACB0AC903FC20F948190507A4095CAC044C8B167
+
+[credential]
+    helper = cache --timeout=3600
+
+[push]
+    default = simple
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    cp = cherry-pick
+    ls = log --graph --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    diff = diff --word-diff
+    dc = diff --cached
+    la = "!git config -l | grep alias | cut -c 7-"
+    cob = checkout -b
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    wipe = "!git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard"
+    ec = config --global -e
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    report = "log --author='Oleksii Samoliyk' --since='1 day ago' --until='now' --format='%Cgreen%ci%Creset %s%Creset'"
+    mr = "log --pretty='%h: %B' --first-parent --no-merges --reverse"
+    cleanup = "!git checkout master && git fetch -p && git branch --merged | grep -v '* ' | xargs -I {} git branch -d {}"
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+
+[color]
+    diff = true
+    status = true
+    branch = true
+    interactive = true
+    ui = true
+
+[color "branch"]
+    current = green bold
+    local = green
+    remote = red bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red
+
+[rebase]
+    autoStash = true
+
+[stash]
+    showPatch = true
+
+[gpg]
+    program = gpg
+
+[commit]
+    template = ~/.gitcommit
+    #gpgSign = true
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[pager]
+    branch = false
+[pull]
+    rebase = false
+[init]
+    defaultBranch = master
