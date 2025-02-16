@@ -187,7 +187,8 @@ uname_arch_check() {
 untar() {
   tarball=$1
   case "${tarball}" in
-    *.tar.gz | *.tgz | *.tar.xz) tar -xzf "${tarball}" ;;
+    *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
+    *.tar.xz) tar -xJf "${tarball}" ;;
     *.tar) tar -xf "${tarball}" ;;
     *.zip) unzip "${tarball}" ;;
     *)
