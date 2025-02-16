@@ -1,7 +1,8 @@
 # Useful keys
 alias wget='wget -c'
 alias mkdir='mkdir -pv'
-alias less='less -FX'
+alias '$'=''
+alias help='run-help'
 
 # Short names
 alias lg="lazygit"
@@ -22,8 +23,13 @@ alias activate='source ./.venv/bin/activate'
 
 # Specific aliases for macos
 if [[ $OSTYPE == 'darwin'* ]]; then
+  # Flush DNS cache
   alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-  alias brew='/opt/homebrew/bin/brew'
+
+  # Set brew cli path
+  if [ -f /opt/homebrew/bin/brew ]; then
+    alias brew='/opt/homebrew/bin/brew'
+  fi
 fi
 
 # Set alias for the jc2aws

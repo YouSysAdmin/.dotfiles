@@ -18,8 +18,31 @@ Preparing my development environment with needed tools and configs.
 ```shell
 git clone git@github.com:YouSysAdmin/.dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
+# copy here you Brewfile if you want use brew 
+# for installation additional software during dotfiles install
 ./install
 ```
+
+## Directories
+
+```
+.
+├── Brewfile.dist         # default brew file
+├── bin                   # scripts for install tools, etc 
+├── config                # tools and software configs
+│   ├── git               # git config files
+│   ├── helix             # helix config files
+│   ├── shell             # shared shell files [aliases, functions/ init, etc.]
+│   ├── zellij            # zellij config files
+│   └── zsh               # zsh config files
+├── install               # execure for install dot files and tools
+└── install.conf.yaml     # dotbot config file        
+```
+
+## Usage
+Add your files to a ~/.shell directory, after dotfiles installation,
+all files from this directory automatically load during start ZSH (additional variables, functions, etc.).
+
 ## Tools
 - Helix - [A post-modern modal text editor](https://github.com/helix-editor/helix)
 - Lefthook - [Fast and powerful Git hooks manager for any type of projects](https://github.com/evilmartians/lefthook)
@@ -42,7 +65,8 @@ cd $HOME/.dotfiles
 - Zellij - [A terminal workspace with batteries included](https://github.com/zellij-org/zellij)
 
 ## Additional packages
-### For Rbenv
+### Buildkit
+Needs for build ruby, nodejs, etc.
 #### Linux (APT)
 ```shell
 apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev

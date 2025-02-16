@@ -1,0 +1,50 @@
+# Set truecolor value for COLORTERM
+export COLORTERM=truecolor
+
+# Editors
+export EDITOR='hx'
+export VISUAL='hx'
+export PAGER='less'
+
+# Add ~/.krew/bin in a PATH
+if [ -d "$HOME/.krew" ]; then
+  export PATH=$HOME/.krew/bin:$PATH
+fi
+
+# Add ~/.local/bin directory in a PATH
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
+
+# Add ~/.bin directory in a PATH
+if [ -d "$HOME/.bin" ]; then
+  export PATH=$HOME/.bin:$PATH
+fi
+
+# Add /usr/local/bin directory in a PATH
+if [ -d "/usr/local/bin" ]; then
+  export PATH=/usr/local/bin:$PATH
+fi
+
+# Init Rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
+# Init nodenv
+if [ -d "$HOME/.nodenv" ]; then
+  export PATH=$HOME/.nodenv/bin:$PATH
+  eval "$(nodenv init -)"
+fi
+
+# Init rust cargo
+if [ -d "$HOME/.cargo" ]; then
+  . "$HOME/.cargo/env"
+fi
+
+# Init goenv
+if [ -d "$HOME/.goenv" ]; then
+  export PATH=$HOME/.goenv/bin:$PATH
+  eval "$(goenv init -)"
+fi

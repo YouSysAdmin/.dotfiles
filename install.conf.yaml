@@ -30,6 +30,10 @@
 # --  Link configs
 # ---------------------------------------------------------------------------------------------
 - link:
+    # various shell configs, etc.
+    ~/.shell:
+      path: config/shell/*
+      glob: true
     # zellij
     ~/.config/zellij:
       path: config/zellij/*
@@ -55,18 +59,16 @@
       path: vendor/oh-my-zsh/*
       glob: true
     # zsh and stuff
-    ~/.zsh_aliases: config/zsh/zsh_aliases
-    ~/.zsh_additional_functions: config/zsh/zsh_additional_functions
-    ~/.zshrc: config/zsh/zshrc
     ~/.zshenv: config/zsh/zshenv
-    ~/.zsh_init: config/zsh/zsh_init
+    ~/.zlogin: config/zsh/zlogin
+    ~/.zlogout: config/zsh/zlogout
+    ~/.zprofile: config/zsh/zprofile
+    ~/.zshrc: config/zsh/zshrc
     ~/.p10k.zsh: config/zsh/p10k.zsh
     # git
     ~/.gitcommit: config/git/gitcommit
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore: config/git/gitignore
-    # auto completion
-    ~/.auto_completion: config/auto_completion
     # bin
     #~/.local/bin/response-check: bin/response-check.sh
 

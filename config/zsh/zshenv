@@ -1,7 +1,21 @@
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$HOME/.nodenv/bin:$PATH
-export PATH=$HOME/.goenv/bin:$PATH
-export PATH=$HOME/.krew/bin:$PATH
+#!/usr/bin/env zsh
+#
+# Defines environment variables.
+# This file is sourced by all instances of Zsh (interactive, non-interactive, login and non-login ),
+# and thus, it should be kept as small as possible and should only define environment variables.
 
-export COLORTERM=truecolor
+#echo "Running .zshenv"
+
+# OS and Architecture
+export UNAME_SYSTEM=$(/usr/bin/uname -s)
+export UNAME_MACHINE=$(/usr/bin/uname -m)
+
+
+# XDG  Base Directory Specification
+# - https://specifications.freedesktop.org/basedir-spec/latest/
+# - https://wiki.archlinux.org/title/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
