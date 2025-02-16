@@ -128,6 +128,9 @@
       description: setup kubectl
       command: bin/install-kubectl.sh
     -
+      description: setup kubecolor
+      command: bin/install-kubecolor.sh
+    -
       description: setup krew
       command: bin/install-krew.sh
     -
