@@ -142,7 +142,7 @@
     -
       description: setup kubectl plugins via kubectl-krew
       command: |
-        source $HOME/.zshenv
+        source $HOME/.shell/init
         kubectl krew install ctx
         kubectl krew install ns
       # kubectl krew install tap # uncomment if needed but only linux or intel mac
