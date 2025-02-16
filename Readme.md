@@ -40,3 +40,14 @@ cd $HOME/.dotfiles
 - TFSec - [TFSec is now part of Trivy](https://github.com/aquasecurity/tfsec)
 - TFSwitch - [A command line tool to switch between different versions of terraform](https://github.com/warrensbox/terraform-switcher)
 - Zellij - [A terminal workspace with batteries included](https://github.com/zellij-org/zellij)
+
+## Additional packages
+### For Rbenv
+#### Linux (APT)
+```shell
+apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
+```
+#### MacOS
+```shell
+brew install openssl@3 readline libyaml gmp autoconf
+```
