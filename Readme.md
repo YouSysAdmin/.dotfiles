@@ -44,6 +44,10 @@ Add your files to a ~/.shell directory, after dotfiles installation,
 all files from this directory automatically load during start ZSH (additional variables, functions, etc.).
 
 ## Tools
+### Doesn't install automatically [only configs]
+- Alacritty - [A fast, cross-platform, OpenGL terminal emulator](https://github.com/alacritty/alacritty)
+
+### Will be installed automatically
 - Helix - [A post-modern modal text editor](https://github.com/helix-editor/helix)
 - Lefthook - [Fast and powerful Git hooks manager for any type of projects](https://github.com/evilmartians/lefthook)
 - OhMyZSH - [A delightful community-driven framework for managing your zsh configuration](https://github.com/ohmyzsh/ohmyzsh)
