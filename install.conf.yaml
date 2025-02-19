@@ -76,6 +76,8 @@
     ~/.gitcommit: config/git/gitcommit
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore: config/git/gitignore
+    # editorconfig
+    ~/.editorconfig: config/editorconfig/default
     # bin
     #~/.local/bin/response-check: bin/response-check.sh
 
