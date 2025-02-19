@@ -72,3 +72,8 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
+
+# MacOS only, OrbStack command-line tools and integration
+if [[ ! -f "~/.orbstack/shell/init.zsh" ]]; then
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi
