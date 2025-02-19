@@ -16,6 +16,6 @@ if [[ "$(uname)" == Darwin* ]] || [[ "$(uname)" == darwin* ]]; then
 fi
 
 if [[ "$(uname)" == Linux* ]] || [[ "$(uname)" == linux* ]]; then
-  [[ -x "$(command -v pacman)" ]] && sudo pacman -S --needed "${PACMAN_PACKAGES[@]}"
-  [[ -x "$(command -v apt)" ]] && sudo apt update && apt "${APT_PACKAGES[@]}"
+  [[ -x "$(command -v pacman)" ]] && sudo pacman -S --needed "${PACMAN_PACKAGES[@]}" || exit 0;
+  [[ -x "$(command -v apt)" ]] && sudo apt update && apt "${APT_PACKAGES[@]}" || exit 0;
 fi
