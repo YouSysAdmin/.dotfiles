@@ -69,13 +69,25 @@ all files from this directory automatically load during start ZSH (additional va
 - Zellij - [A terminal workspace with batteries included](https://github.com/zellij-org/zellij)
 
 ## Additional packages
-### Buildkit
-Needs for build ruby, nodejs, etc.
-#### Linux (APT)
+### Default packages for installing
+#### All OS
 ```shell
-apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
+zsh wget curl jq
 ```
-#### MacOS
+
+### During Rbenv installing, the next packages will be installed/updated
+See `bin/install-rbenv.sh`
+#### APT (Debian based Linux)
 ```shell
-brew install openssl@3 readline libyaml gmp autoconf
+autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
+```
+
+#### Pacman (Arch based Linux)
+```shell
+base-devel rust libffi libyaml openssl zlib
+```
+
+#### MacOS (via Brew)
+```
+openssl@3 readline libyaml gmp autoconf
 ```
