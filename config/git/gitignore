@@ -4,8 +4,12 @@
 *.log
 *.pem
 *.priv
+*.key
 *.private
-.idea
-.fleet
-.vscode
 .DS_Store
+.gitignore.d
+
+# IDE's
+.idea
+.vscode
+.fleet

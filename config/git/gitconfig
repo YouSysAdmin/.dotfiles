@@ -1,10 +1,7 @@
 [core]
-    editor = vim
+    editor = hx
     excludesFile = ~/.gitignore
     autocrlf = input
-
-[color]
-    ui = true
 
 [user]
     name = YouSysAdmin
@@ -16,6 +13,7 @@
 
 [push]
     default = simple
+    autoSetupRemote = true
 
 [alias]
     co = checkout
@@ -40,11 +38,11 @@
     squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
 
 [color]
-    diff = true
-    status = true
-    branch = true
-    interactive = true
-    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
 
 [color "branch"]
     current = green bold

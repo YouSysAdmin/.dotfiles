@@ -1,22 +1,48 @@
-feature: 
-ref: 
+# If applied, this commit will...
 
-# |<----  Using a Maximum Of 50 Characters  ---->|
+
+# Explain why this change is being made
+
+
+# Explain how this change will affect functionality and behavior
+
+
+# Provide links to any relevant tickets, articles or other resources
+
+
+# Breaking Change?
+
+
+# ---------------------------------------------------
+# Conventional Commit
+# ---------------------------------------------------
+# <type>[(<scope>)]: <subject>
 #
-# Description
-# BREAKING CHANGES:
-#
-# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
-#
-# --- COMMIT END ---
-# Tag can be
-#    feature  (new feature)
-#    fix      (bug fix)
-#    refactor (refactoring production code)
-#    cleanup  (cleanup not needed stuff)
-#    ci       (changes in CI configurations)
-#    style    (formatting, missing semi colons, etc; no code change)
-#    docs     (changes to documentation)
-#    version  (version bump/new release; no production code change)
-#    hack     (Temporary fix to make things move forward; please avoid it)
-#    WIP      (Work In Progress; for intermediate commits to keep patches reasonably sized)
+# Type:
+#    fix:           a bug fix (PATCH)
+#    feat:          a new feature (MINOR)
+#    test:          adding or updating tests
+#    style:         update code formatting (indentation, tabs vs spaces, etc.)
+#    refactor:      refactoring of code (no bug fix or added feature)
+#    perf:          a code change that improves performance
+#    docs:          documentation only changes
+#    chore:         updates to build process (see ci and build)
+#     ├─ build:     changes that affect the build system or external dependencies
+#     └─ ci:        changes to  CI configuration files and scripts
+# Scope:
+#    Whatever is meaningful in the project
+
+# ---------------------------------------------------
+# The seven rules of a great git commit message
+# ---------------------------------------------------
+#   1. Separate subject from body with a blank line
+#   2. Limit the subject line to 50 characters
+#   3. Capitalize the subject line
+#   4. Do not end the subject line with a period
+#   5. Use the imperative mood in the subject line
+#   6. Wrap the body at 72 characters
+#   7. Use the body to explain what and why vs. how
+
+# Links:
+#   https://www.conventionalcommits.org
+#   https://chris.beams.io/posts/git-commit/
