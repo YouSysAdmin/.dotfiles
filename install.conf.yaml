@@ -19,11 +19,11 @@
 # --  Setup
 # ---------------------------------------------------------------------------------------------
 - shell:
-    - ["git submodule update --init --recursive",                             Installing/Updating submodules]
-    - ["mkdir -p $HOME/{.config,.cache,.local/{share,state,bin}}",            Creating XDG_* directories]
-    - ["mkdir -p $HOME/{tmp,Projects}",                                       Creating default directories]
-    - ["mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                   Creating ssh directory]
-    - ["mkdir -p $HOME/.ssl/{certs,private}; chmod 700 $HOME/.ssl",           Creating ssl directory]
+    - [ "git submodule update --init --recursive",                             Installing/Updating submodules ]
+    - [ "mkdir -p $HOME/{.config,.cache,.local/{share,state,bin}}",            Creating XDG_* directories ]
+    - [ "mkdir -p $HOME/{tmp,Projects}",                                       Creating default directories ]
+    - [ "mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                   Creating ssh directory ]
+    - [ "mkdir -p $HOME/.ssl/{certs,private}; chmod 700 $HOME/.ssl",           Creating ssl directory ]
     #- ["test -L ~/src || ln -s ~/Repos ~/src",                                Symlink repos]
 
 # ---------------------------------------------------------------------------------------------
@@ -98,53 +98,53 @@
       command: "[[ $OSTYPE != 'darwin'* ]] && apt update && apt install zsh wget curl unzip || exit 0"
 
 - shell:
-    -
-      description: install oh-my-zsh
+    # OhMyZSH with powerlevel10k theme
+    - description: install oh-my-zsh
       command: bin/install-oh-my-zsh.sh
-    -
-      description: install rbenv
+    # Rbenv
+    - description: install rbenv
       command: bin/install-rbenv.sh
-    -
-      description: install nodenv
+    # Nodenv
+    - description: install nodenv
       command: bin/install-nodenv.sh
-    -
-     description: install goenv
-     command: bin/install-goenv.sh
-    -
-      description: install zellij
+    # Goenv
+    - description: install goenv
+      command: bin/install-goenv.sh
+    # Zellij
+    - description: install zellij
       command: bin/install-zellij.sh
-    -
-      description: setup go-task
+    # GoTask
+    - description: setup go-task
       command: bin/install-go-task.sh
-    -
-      description: setup jc2aws
+    # JC2AWS
+    - description: setup jc2aws
       command: bin/install-jc2aws.sh
-    -
-      description: setup tfswitch
+    # TFSwitch
+    - description: setup tfswitch
       command: bin/install-tfswitch.sh
-    -
-      description: setup tfsec
+    # TFSec
+    - description: setup tfsec
       command: bin/install-tfsec.sh
-    -
-      description: setup tflint
+    # TFLint
+    - description: setup tflint
       command: bin/install-tflint.sh
-    -
-      description: setup kubectl
+    # Kubectl
+    - description: setup kubectl
       command: bin/install-kubectl.sh
-    -
-      description: setup kubecolor
+    # Kubecolor
+    - description: setup kubecolor
       command: bin/install-kubecolor.sh
-    -
-      description: setup krew
+    # Krew (kubectl plugin manager)
+    - description: setup krew
       command: bin/install-krew.sh
-    -
-      description: setup helix-editor
+    # Helix (terminal editor)
+    - description: setup helix-editor
       command: bin/install-helix.sh
-    -
-      description: setup lefthook
+    # Lefthook (git hooks)
+    - description: setup lefthook
       command: bin/install-lefthook.sh
-    -
-      description: setup kubectl plugins via kubectl-krew
+    # Kubectl plugins via krew
+    - description: setup kubectl plugins via kubectl-krew
       command: |
         source $HOME/.shell/init
         kubectl krew install ctx
