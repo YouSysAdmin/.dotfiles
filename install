@@ -8,6 +8,12 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+[[ ! -x "$(command -v python)" ]] && [[ ! -x "$(command -v python3)" ]] && echo "ERROR: python package not installed" && exit 1 || echo "OK: python";
+[[ ! -x "$(command -v unzip)" ]] && echo "ERROR: unzip package not installed" && exit 1 || echo "OK: unzip";
+[[ ! -x "$(command -v git)" ]] && echo "ERROR: git package not installed" && exit 1 || echo "OK: git";
+[[ ! -x "$(command -v curl)" ]] && echo "ERROR: curl package not installed" && exit 1 || echo "OK: curl";
+[[ ! -x "$(command -v wget)" ]] && echo "ERROR: wget package not installed" && exit 1 || echo "OK: wget";
+
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"

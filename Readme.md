@@ -2,17 +2,11 @@
 Preparing my development environment with needed tools and configs.
 
 ## Preinstall requirements
-### MacOS
 - python
 - unzip
 - git
 - curl
 - wget
-
-### Linux (APT)
-- python
-- git
-- others will be installed during process via apt
 
 ## Install
 ```shell
