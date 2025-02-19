@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 
-
 usage() {
   this=$1
   cat <<EOF
@@ -25,9 +24,9 @@ parse_args() {
   BINDIR=${BINDIR:-$HOME/.local/bin}
   while getopts "b:dh?" arg; do
     case "$arg" in
-      b) BINDIR="$OPTARG" ;;
-      d) log_set_priority 10 ;;
-      h | \?) usage "$0" ;;
+    b) BINDIR="$OPTARG" ;;
+    d) log_set_priority 10 ;;
+    h | \?) usage "$0" ;;
     esac
   done
   shift $((OPTIND - 1))
@@ -53,12 +52,13 @@ is_supported_platform() {
   platform=$1
   found=1
   case "$platform" in
-    darwin/amd64) found=0 ;;
-    MacOS/amd64) found=0 ;;
-    darwin/arm64) found=0 ;;
-    MacOS/arm64) found=0 ;;
-    Linux/amd64) found=0 ;;
-    Linux/arm64) found=0 ;;
+  darwin/amd64) found=0 ;;
+  MacOS/amd64) found=0 ;;
+  darwin/arm64) found=0 ;;
+  MacOS/arm64) found=0 ;;
+  Linux/amd64) found=0 ;;
+  Linux/arm64) found=0 ;;
+  Linux/x86_64) found=0 ;;
   esac
   return $found
 }
@@ -123,15 +123,15 @@ log_priority() {
 }
 log_tag() {
   case $1 in
-    0) echo "emerg" ;;
-    1) echo "alert" ;;
-    2) echo "crit" ;;
-    3) echo "err" ;;
-    4) echo "warning" ;;
-    5) echo "notice" ;;
-    6) echo "info" ;;
-    7) echo "debug" ;;
-    *) echo "$1" ;;
+  0) echo "emerg" ;;
+  1) echo "alert" ;;
+  2) echo "crit" ;;
+  3) echo "err" ;;
+  4) echo "warning" ;;
+  5) echo "notice" ;;
+  6) echo "info" ;;
+  7) echo "debug" ;;
+  *) echo "$1" ;;
   esac
 }
 log_debug() {
@@ -153,28 +153,28 @@ log_crit() {
 uname_os() {
   os=$(uname -s | tr '[:upper:]' '[:lower:]')
   case "$os" in
-    darwin) os="MacOS" ;;
-    linux) os="Linux"
+  darwin) os="MacOS" ;;
+  linux) os="Linux" ;;
   esac
   echo "$os"
 }
 uname_arch() {
   arch=$(uname -m)
   case $arch in
-    x86_64) arch="amd64" ;;
-    aarch64) arch="arm64" ;;
-    armv5*) arch="armv5" ;;
-    armv6*) arch="armv6" ;;
-    armv7*) arch="armv7" ;;
+  x86_64) arch="x86_64" ;;
+  aarch64) arch="arm64" ;;
+  armv5*) arch="armv5" ;;
+  armv6*) arch="armv6" ;;
+  armv7*) arch="armv7" ;;
   esac
   echo ${arch}
 }
 uname_os_check() {
   os=$(uname_os)
   case "$os" in
-    darwin) return 0 ;;
-    MacOS) return 0;;
-    Linux) return 0 ;;
+  darwin) return 0 ;;
+  MacOS) return 0 ;;
+  Linux) return 0 ;;
   esac
   log_crit "uname_os_check '$(uname -s)' got converted to '$os' which is not a GOOS value. Please file bug at https://github.com/client9/shlib"
   return 1
@@ -182,12 +182,13 @@ uname_os_check() {
 uname_arch_check() {
   arch=$(uname_arch)
   case "$arch" in
-    amd64) return 0 ;;
-    arm64) return 0 ;;
-    armv5) return 0 ;;
-    armv6) return 0 ;;
-    armv7) return 0 ;;
-    ppc64) return 0 ;;
+  x86_64) return 0 ;;
+  amd64) return 0 ;;
+  arm64) return 0 ;;
+  armv5) return 0 ;;
+  armv6) return 0 ;;
+  armv7) return 0 ;;
+  ppc64) return 0 ;;
   esac
   log_crit "uname_arch_check '$(uname -m)' got converted to '$arch' which is not a GOARCH value.  Please file bug report at https://github.com/client9/shlib"
   return 1
@@ -195,14 +196,14 @@ uname_arch_check() {
 untar() {
   tarball=$1
   case "${tarball}" in
-    *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
-    *.tar) tar -xf "${tarball}" ;;
-    *.zip) unzip "${tarball}" ;;
-    *.gz) gunzip "${tarball}" ;;
-    *)
-      log_err "untar unknown archive format for ${tarball}"
-      return 1
-      ;;
+  *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
+  *.tar) tar -xf "${tarball}" ;;
+  *.zip) unzip "${tarball}" ;;
+  *.gz) gunzip "${tarball}" ;;
+  *)
+    log_err "untar unknown archive format for ${tarball}"
+    return 1
+    ;;
   esac
 }
 mktmpdir() {
@@ -327,7 +328,7 @@ PREFIX="$OWNER/$REPO"
 
 # use in logging routines
 log_prefix() {
-	echo "$PREFIX"
+  echo "$PREFIX"
 }
 PLATFORM="${OS}/${ARCH}"
 GITHUB_DOWNLOAD=https://github.com/${OWNER}/${REPO}/releases/download
