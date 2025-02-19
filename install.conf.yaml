@@ -85,17 +85,15 @@
       stdout: true
       stderr: true
 
+# Ensure that all installation scripts are executable
+- shell:
+    - description: make all installation scripts executable
+      command: chmod +x bin/*
+
 # Install base system packages via package manager
 - shell:
-    -
-      description: install brew
-      command: "[[ $OSTYPE == 'darwin'* ]] && sh -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" || exit 0"
-    -
-      description: install additional tools via brew
-      command: "[[ -f ./Brewfile ]] && [[ $OSTYPE == 'darwin'* ]] && brew bundle || exit 0"
-    -
-      description: install linux packages
-      command: "[[ $OSTYPE != 'darwin'* ]] && apt update && apt install zsh wget curl unzip || exit 0"
+    - description: install brew
+      command: bin/install-software.sh
 
 - shell:
     # OhMyZSH with powerlevel10k theme
