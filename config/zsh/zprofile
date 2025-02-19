@@ -63,7 +63,7 @@ fi
 # Temporary Files
 #
 
-if [[ ! -d "$TMPDIR" ]]; then
+if [[ ! -d "$TMPDIR" ]] || ([[ "$(uname)" == Darwin* ]] || [[ "$(uname)" == darwin* ]]); then
   export TMPDIR="/tmp/$USER"
   mkdir -p -m 700 "$TMPDIR"
 fi
