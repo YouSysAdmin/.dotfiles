@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# See ~/.bashrc for information how bash startup files are loaded
+#echo "Running .bash_profile"
+
+# Load in .bashrc
+[ -f ~/.bashrc ] && source ~/.bashrc

@@ -62,6 +62,9 @@
     ~/.oh-my-zsh:
       path: vendor/oh-my-zsh/*
       glob: true
+    # bash
+    ~/.bash_profile: config/bash/bash_profile
+    ~/.bashrc: config/bash/bashrc
     # zsh and stuff
     ~/.zshenv: config/zsh/zshenv
     ~/.zlogin: config/zsh/zlogin
