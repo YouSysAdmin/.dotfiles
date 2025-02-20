@@ -23,7 +23,7 @@ option_as_alt = "OnlyLeft" # "OnlyRight" | "Both" | "None"
 
 [font]
 # https://alacritty.org/config-alacritty.html#font
-size = 15.0
+size = 13.0
 normal.family = "JetBrainsMonoNL Nerd Font Mono"
 bold.family = "JetBrainsMonoNL Nerd Font Mono"
 italic.family = "JetBrainsMonoNL Nerd Font Mono"
