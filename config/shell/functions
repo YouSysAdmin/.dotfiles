@@ -20,6 +20,21 @@ killzombies() {
   fi
 }
 
+# Confirm
+# confirm && curl ... || exit 0;
+# confirm "message .. [Y/n]" && curl ... || exit 0;
+confirm() {
+  read -r -p "${1:-Are you sure? [y/N]} " response
+  case "$response" in
+  [yY][eE][sS] | [yY])
+    true
+    ;;
+  *)
+    false
+    ;;
+  esac
+}
+
 # quick function to read .env file
 # use it via:
 # source readenv
