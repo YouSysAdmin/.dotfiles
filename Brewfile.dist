@@ -4,32 +4,29 @@ tap "homebrew/cask-versions"
 tap "warrensbox/tap"
 tap "hashicorp/tap"
 
-brew "python"
-brew "awscli"
-brew "glib"
-brew "chamber"
-brew "checkov"
-brew "shellcheck"
-brew "git"
-brew "gnupg"
-brew "pinentry-mac"
-brew "htop"
-brew "lazygit"
-brew "pre-commit"
-brew "pwgen"
-brew "watch"
-brew "curl"
-brew "wget"
-brew "zsh"
-brew "cloc"
+brew "python"                          # python
+brew "awscli"                          # aws cloud cli
+brew "glib"                            # glib
+brew "chamber"                         # cli for managing secrets (aws)
+brew "checkov"                         # a static code analysis tool for infrastructure as code
+brew "shellcheck"                      # a static analysis tool for shell scripts
+brew "git"                             # git
+brew "gnupg"                           # gpg
+brew "pinentry-mac"                    # collection of PIN or passphrase entry dialogs
+brew "htop"                            # an interactive process viewer for Unix
+brew "lazygit"                         # simple terminal UI for git commands
+brew "pwgen"                           # simple password generator
+brew "watch"                           # execute a program periodically and watch the output
+brew "curl"                            # curl
+brew "wget"                            # wget
+brew "zsh"                             # zsh shell
+brew "cloc"                            # count lines of code
+brew "jq"                              # command-line JSON processor, like sed
+brew "yq"                              # command-line YAML processor, like sed
 
-cask "alt-tab"
-cask "slack"
-cask "telegram"
-cask "zoom"
-cask "maccy"
-cask "jetbrains-toolbox"
-cask "iterm2"
-# Installed from AppMarket
-# cask "hiddenbar"
-cask "gpg-suite"
+cask "maccy"                           # clipboard manager for macOS
+cask "jetbrains-toolbox"               # Jetbrains tool for managing their ide
+cask "font-jetbrains-mono-nerd-font"   # Jetbrains mono font from Nerd font
+cask "iterm2"                          # improved macOS terminal emulator
+cask "hiddenbar"                       # an macOS utility that helps hide menu bar icons
+cask "gpg-suite"                       # GPG GUI
