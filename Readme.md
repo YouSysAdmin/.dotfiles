@@ -24,6 +24,9 @@ cd $HOME/.dotfiles
 ├── Brewfile.dist         # default brew file
 ├── bin                   # scripts for install tools, etc 
 ├── config                # tools and software configs
+│   ├── alacritty         # alacritty config files
+│   ├── bash              # bash config files
+│   ├── editorconfig      # ~/.editorconfig
 │   ├── git               # git config files
 │   ├── helix             # helix config files
 │   ├── shell             # shared shell files [aliases, functions/ init, etc.]
