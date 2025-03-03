@@ -9,6 +9,7 @@ live_config_reload = true
 # https://alacritty.org/config-alacritty.html#env
 # Add your env vars
 # MY_ENV = "value"
+TERM = "xterm-256color"
 
 [window]
 # https://alacritty.org/config-alacritty.html#window
@@ -118,6 +119,9 @@ hide_when_typing = true
 
 [keyboard]
 # https://alacritty.org/config-alacritty.html#keyboard
+#[[keyboard.bindings]]
+#action = "ToggleFullscreen"
+#key = "F11"
 
 [debug]
 # https://alacritty.org/config-alacritty.html#debug
