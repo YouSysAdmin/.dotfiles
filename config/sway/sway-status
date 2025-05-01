@@ -1,9 +1,24 @@
 #!/usr/bin/env bash
 
 # Data
-date=$(date "+%a %F %R")
+date=$(TZ='Europe/Kyiv' date "+%a %F %R")
+
+# Charge status
+charge=$([[ $(cat /sys/class/power_supply/macsmc-ac/online) == "1" ]] && echo -n "󱐋")
 
 # Bat
-bat=$(cat /sys/class/power_supply/BAT0/capacity)
+bat=$(cat /sys/class/power_supply/macsmc-battery/capacity)
 
-echo $bat "|" $date
+# tun0 interface IP address
+tun0_ip=$(ip addr | grep tun0|grep inet|awk '{print $2}'|cut -d "/" -f 1 | sed 's/$/ /g')
+tun0=$([[ $tun0_ip != "" ]] && echo "󰱓" $tun0_ip "|" || echo "󰅛" "|") 
+
+# wlan0 interface IP address
+wlan0_ip=$(ip addr | grep wlan0|grep inet|awk '{print $2}'|cut -d "/" -f 1 | sed 's/$/ /g')
+wlan0=$([[ $wlan0_ip != "" ]] && echo "󰖩" $wlan0_ip "|" || echo "󱚼" "|")
+
+# Current keyboard layout
+curr_layout=$(swaymsg -t get_inputs | jq -r 'map(select(has("xkb_active_layout_name")))[0].xkb_active_layout_name' | cut -c1-2)
+
+
+echo $tun0 $wlan0 $charge$bat "|" $curr_layout  "|" $date "|"

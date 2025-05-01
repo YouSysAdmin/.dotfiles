@@ -8,13 +8,16 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    tab name="VPN" {
+        pane
+    }
     tab name="CODE" {
         pane
     }
     tab name="SSH" {
         pane
     }
-    tab name="VARIOUS" {
+    tab name="NOTES" {
         pane
     }
 }
