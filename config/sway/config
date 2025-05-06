@@ -277,6 +277,14 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+    tray {
+    #icon_theme "adwaita"
+    #$icon_theme
+    bindsym {
+      # The middle button over a bar run nmtui
+      #button2 exec iwdgtk
+    }
+  }
 }
 
 for_window {
