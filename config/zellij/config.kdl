@@ -398,19 +398,19 @@ keybinds clear-defaults=true {
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
 plugins {
-    compact-bar location="zellij:compact-bar"
+    //compact-bar location="zellij:compact-bar"
     configuration location="zellij:configuration"
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
+    //filepicker location="zellij:strider" {
+    //    cwd "/"
+    //}
     plugin-manager location="zellij:plugin-manager"
     session-manager location="zellij:session-manager"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    tab-bar location="zellij:tab-bar"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
+    //status-bar location="zellij:status-bar"
+    //strider location="zellij:strider"
+    //tab-bar location="zellij:tab-bar"
+    //welcome-screen location="zellij:session-manager" {
+    //    welcome_screen true
+    //}
 
 // -----------------------
 // extra plugins
@@ -478,7 +478,7 @@ plugins {
         format_left "#[bg=$bg2,fg=$fg3] {session} {mode}#[bg=$bg1]{tabs}"
         format_center "{notifications}"
     //format_right  "#[bg=$bg1,fg=$bg2]#[bg=$bg2,fg=$fg4] {command_user}@{command_host} #[bg=$bg2,fg=$fg3]#[bg=$fg3,fg=$bg1] {datetime} "
-        format_right "#[bg=$bg2,fg=$fg3]#[bg=$fg3,fg=$bg1] {datetime} "
+        format_right "#[bg=$fg3,fg=$bg1]"
         format_space "#[bg=$bg1,fg=$fg1]"
         format_hide_on_overlength "true"
         format_precedence "lrc"
@@ -534,7 +534,6 @@ plugins {
         datetime "{format}"
         datetime_format "%Y-%m-%d %H:%M"
         datetime_timezone "Europe/Kyiv"
-
     }
 
 }
@@ -556,7 +555,7 @@ load_plugins {
 //   - true
 //   - false (Default)
 //
-// simplified_ui true
+// simplified_ui false
 
 // Choose the theme that is specified in the themes section.
 // Default: default
