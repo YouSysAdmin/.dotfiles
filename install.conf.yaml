@@ -42,6 +42,10 @@
     ~/.config/alacritty:
       path: config/alacritty/*
       glob: true
+    # fuzzel
+    ~/.config/fuzzel:
+      path: config/fuzzel/*
+      glob: true
     # zellij plugins
     ~/.local/share/zellij/plugins:
       path: config/zellij/plugins/*
