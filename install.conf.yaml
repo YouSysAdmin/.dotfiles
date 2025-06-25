@@ -50,6 +50,11 @@
     ~/.local/share/zellij/plugins:
       path: config/zellij/plugins/*
       glob: true
+    # gnupg
+    ~/.gnupg:
+      mode: '0700'
+      path: config/gnupg/*
+      glob: true
     # helix
     ~/.config/helix:
       path: config/helix/*

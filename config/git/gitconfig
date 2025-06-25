@@ -5,8 +5,8 @@
 
 [user]
     name = YouSysAdmin
-    email = git@sysalex.com
-    #signingKey = ACB0AC903FC20F948190507A4095CAC044C8B167
+    email = git@yousysadmin.com
+    signingKey = 430DFD492C674EE5
 
 [credential]
     helper = cache --timeout=3600
@@ -71,7 +71,7 @@
 
 [commit]
     template = ~/.gitcommit
-    #gpgSign = true
+    gpgSign = true
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
