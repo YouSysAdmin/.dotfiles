@@ -150,8 +150,8 @@
     - description: setup krew
       command: bin/install-krew.sh
     # Helix (terminal editor)
-    - description: setup helix-editor
-      command: bin/install-helix.sh
+    #- description: setup helix-editor
+    #  command: bin/install-helix.sh
     # Lefthook (git hooks)
     - description: setup lefthook
       command: bin/install-lefthook.sh
