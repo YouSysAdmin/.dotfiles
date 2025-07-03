@@ -1,2 +1,5 @@
 theme = "monokai_pro_octagon"
 
+[keys.normal.space]
+B = ":sh git-blame %{buffer_name} %{cursor_line}" # Show blame information
+U = ":sh git-blame --url-only %{cursor_line} %{buffer_name} | xargs -I{} open {}" # Open PR or commit url in browser

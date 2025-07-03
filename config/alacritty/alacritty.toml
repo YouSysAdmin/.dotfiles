@@ -119,8 +119,8 @@ hide_when_typing = true
 #[hints]
 # https://alacritty.org/config-alacritty.html#hints
 [[hints.enabled]]
-command         = "xdg-open" # On Linux/BSD
-# command       = "open" # On macOS
+#command         = "xdg-open" # On Linux/BSD
+command       = "open" # On macOS
 # command       = { program = "cmd", args = [ "/c", "start",  "" ] } # On Windows
 hyperlinks      = true
 post_processing = true

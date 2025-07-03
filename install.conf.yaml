@@ -88,7 +88,9 @@
     # editorconfig
     ~/.editorconfig: config/editorconfig/default
     # bin
-    #~/.local/bin/response-check: bin/response-check.sh
+    ~/.local/bin/response-check: config/bin/response-check
+    ~/.local/bin/ctrl-z: config/shell/ctrl-z
+    ~/.local/bin/git-blame: config/bin/git-blame
 
 # ---------------------------------------------------------------------------------------------
 # --  Install Software
